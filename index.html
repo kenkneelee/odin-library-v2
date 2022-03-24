@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Odin Library</title>
+        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+            rel="stylesheet"
+        />
+        <script src="scripts/main.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="headerTop">
+                <div class="logo">
+                    <h1>My Library</h1>
+                </div>
+
+                <div class="searchBar">
+                    <img src="images/magnify.png" />
+                    <input type="text" />
+                </div>
+
+                <div class="profile">
+                    <img src="images/profile.png" id="topIcon" />
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="headerBottom">
+                <div class="tabs">
+                    <input type="radio" id="tab1" name="mytabs" checked="checked" class="tab">
+                    <label for="tab1">My Books</label>
+
+                    <input type="radio" id="tab2" name="mytabs" class="tab">
+                    <label for="tab2">My Lists</label>
+
+                    <input type="radio" id="tab3" name="mytabs" class="tab">
+                    <label for="tab3">New & Recommended</label>
+                </div>
+                <button class="newBook">New Book</button>
+            </div>
+            <h2>My Books</h2>
+            <div class="library">
+
+            </div>
+        </main>
+
+        <footer>Made by Kenny Lee @ The Odin Project</footer>
+    </body>
+</html>
