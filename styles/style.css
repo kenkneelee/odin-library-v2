@@ -9,6 +9,10 @@
     color: #faf7f8;
 }
 
+html {
+    font-size: clamp(16px, 1vw, 48px); 
+}
+
 body, html {
     margin:0;
     padding:0;
@@ -114,10 +118,14 @@ h1 {
     flex-direction: column;
 }
 
-.headerBottom button {
-    background-color: aliceblue;
+button {
+    background-color: #faf7f8;
     border-radius:10px;
     padding:10px;
+    margin-left:auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-right: 10px;
 }
 
 main {
