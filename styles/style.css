@@ -1,14 +1,27 @@
+.colours {
+    /* menus */
+    background-color: #4577bb;
+    background-color: #89c0e2;
+    /* buttons */
+    background-color: #a3b8d3;
+    background-color: #e7ceb6;
+    /* text */
+    color: #faf7f8;
+}
+
 body, html {
     margin:0;
     padding:0;
     height:100%;
+    color: #faf7f8;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: aquamarine;
+    background-color: #4577bb;
     height:100%;
 }
 
@@ -26,7 +39,7 @@ h1 {
 }
 
 .headerTop {
-    background-color: #c3c3c3;
+    background-color: #4577bb;
 }
 
 .logo {
@@ -76,11 +89,11 @@ h1 {
 }
 
 .tabs input[type="radio"]:checked + label{
-    background-color: rgb(168, 168, 168);
+    background-color: #e7ceb6;
 }
 
 .tabs label {
-    background-color: aliceblue;
+    background-color: #a3b8d3;
     padding:20px;
     border-top-left-radius:10px;
     border-top-right-radius: 10px;
@@ -88,12 +101,12 @@ h1 {
 }
 
 .tabs .tab {
-    background-color: #ccc;
+    background-color: #a3b8d3;
     order:1;
     margin:0px;
     padding:20px;
     display:none;
-    height:calc(100% - 40px);
+    height:calc(100% - 100px);
 }
 
 .tabs input[type="radio"]:checked + label + .tab {
@@ -114,6 +127,6 @@ main {
 footer {
     text-align: center;
     width:100%;
-    background-color: #c3c3c3;
+    background-color: #4577bb;
     padding:20px 0px;
 }
