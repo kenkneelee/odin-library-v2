@@ -132,6 +132,16 @@ main {
     height:100%;
 }
 
+.library {
+    display:flex;
+}
+
+.card {
+    background-color: #c3c3c3;
+    border-radius: 20px;
+    
+}
+
 footer {
     text-align: center;
     width:100%;
