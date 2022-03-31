@@ -5,8 +5,6 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    // initial method, no prototype AKA makes a new Book.info for every new book?
-
 }
 
 // using prototype, every new book object created will refer to this function instead of creating a new one
@@ -24,6 +22,35 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
 }
 
+let newBook = document.getElementById("newBook");
+newBook.onclick = function(){
+    addBookToLibrary();
+}
+
+const lib = document.getElementById("library");
+
+var clearBtn = document.getElementById("clearBtn");
+clearBtn.onclick = function () {
+    newGrid();
+}
+
+
+function newGrid() {
+    let allBoxes = lib.getElementsByClassName("card");
+    [].forEach.call(lib.querySelectorAll(".card"), function (e) {
+        e.parentNode.removeChild(e);
+    });
+}
+
+/* <div class="card">
+<div class="cardHeader">
+    <h2 class="cardTitle">Aru's Book of Sin</h2>
+    <span class="cardRemove">x</span>
+</div>
+<span class="cardAuthor">Author: </span>
+<span class="cardPages">Pages: </span>
+<span class="cardRead">Read: </span>
+</div> */
 
 
 
