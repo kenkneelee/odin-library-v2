@@ -124,6 +124,7 @@ button {
     margin-bottom:auto;
     margin-right: 10px;
     font-family: "Montserrat", sans-serif;
+    order:0;
 }
 
 main {
@@ -157,4 +158,32 @@ footer {
     width:100%;
     background-color: #4577bb;
     padding:20px 0px;
+}
+
+@media (max-width: 780px) {
+    .headerTop {
+        flex-direction: column;
+    }
+    .profile {
+        text-align: center;
+    }
+    .tabs {
+        display:flex;
+        flex-direction: column;
+    }
+    .tabs .tab {
+        padding:0;
+    }
+
+    .tabs label {
+        border-radius: 0;
+    }
+
+    button {
+        margin:auto;
+    }
+    .headerTop, .logo, .profile {
+        justify-content: center;
+        align-items: center;
+    }
 }
