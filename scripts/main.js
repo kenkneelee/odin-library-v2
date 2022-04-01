@@ -28,16 +28,29 @@ newBook.onclick = function(){
 }
 
 const lib = document.getElementById("library");
+const list = document.getElementById("list")
 
 var clearBtn = document.getElementById("clearBtn");
 clearBtn.onclick = function () {
     newGrid();
 }
 
+var clearListBtn = document.getElementById("clearBtn2");
+clearListBtn.onclick = function () {
+    newGrid2();
+}
+
 
 function newGrid() {
     let allBoxes = lib.getElementsByClassName("card");
     [].forEach.call(lib.querySelectorAll(".card"), function (e) {
+        e.parentNode.removeChild(e);
+    });
+}
+
+function newGrid2() {
+    let allBoxes2 = list.getElementsByClassName("card");
+    [].forEach.call(list.querySelectorAll(".card"), function (e) {
         e.parentNode.removeChild(e);
     });
 }
