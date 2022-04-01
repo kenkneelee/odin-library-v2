@@ -129,5 +129,14 @@ function newGrid2() {
     });
 }
 
-const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet");
+const book1 = new Book("A Game of Thrones", "George Martin", 695, "Yes");
+const book2 = new Book("Naruto", "Masashi Kishimoto", 4354, "No");
+const book3 = new Book("The Lord of The Rings", "J.R.R. Tolkien", 479, "Yes")
+const book4 = new Book("Ender's Game", "Orson Scott", 324, "No")
+myLibrary.push(book1);
+myLibrary.push(book2);
+myLibrary.push(book3);
+myLibrary.push(book4);
+
+display();
 console.log(book1.info());
