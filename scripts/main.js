@@ -31,11 +31,25 @@ function addBookToLibrary() {
 }
 
 let newBook = document.getElementById("newBook");
-newBook.onclick = function () {
-    addBookToLibrary();
-    newGrid();
-    display();
-};
+// newBook.onclick = function () {
+//     addBookToLibrary();
+//     newGrid();
+//     display();
+// };
+
+const modal = document.querySelector("#modal");
+const closeModal = document.querySelector(".close-button");
+
+newBook.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});
+
+
+
 
 function display() {
     console.log(myLibrary);

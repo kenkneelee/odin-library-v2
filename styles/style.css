@@ -121,17 +121,64 @@ button {
     background-color: #faf7f8;
     border-radius:10px;
     padding:10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+#newBook {
     margin-left:auto;
     margin-top:auto;
     margin-bottom:auto;
     margin-right: 10px;
-    font-family: "Montserrat", sans-serif;
     order:0;
 }
 
 main {
     height:100%;
 }
+
+
+
+.modal {
+    width:50%;
+}
+
+.modal .modalHeader {
+    display:flex;
+    justify-content: space-between;
+}
+
+.modal form {
+    display:flex;
+    flex-direction: column;
+}
+
+.formInfo {
+    display:flex;
+    flex-direction: column;
+}
+
+.modal input {
+    height: 1rem;
+    width:25%;
+    border-radius: 1rem;
+}
+
+.modal button {
+    width: 5rem;
+    align-self: center;
+}
+
+.modal label {
+    background-color: initial;
+    border-top-left-radius:0px;
+    border-top-right-radius: 0px;
+    order:initial;
+    display:flex;
+    padding: 0;
+}
+
+
+
 
 .library {
     display:grid;

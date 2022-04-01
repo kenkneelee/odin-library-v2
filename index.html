@@ -39,10 +39,31 @@
                 <label for="tab1">My Books</label>
                 <div class="tab">
                     <h2>My Books</h2>
-                    <div id="library" class="library">
-                        
-                    </div>
+                    <div id="library" class="library"></div>
                     <button id="clearBtn">CLEAR GRID</button>
+
+                    <dialog class="modal" id="modal">
+                        <div class="modalHeader">
+                            <h2>New Book</h2>
+                            <span class="button close-button">x</span>
+                        </div>
+                        <form class="form" method="dialog">
+                            <div class="formInfo">
+                                <label>Title:</label><input type="text" />
+                            </div>
+                            <div class="formInfo">
+                                <label>Author:</label><input type="text" />
+                            </div>
+                            <div class="formInfo">
+                                <label>Pages:</label><input type="number" />
+                            </div>
+                            <div class="formInfo">
+                                <label>Read:</label><input type="text" />
+                            </div>
+
+                            <button class="button" type="submit">Submit</button>
+                        </form>
+                    </dialog>
                 </div>
 
                 <input type="radio" id="tab2" name="mytabs" />
