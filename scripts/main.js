@@ -1,5 +1,7 @@
+// declare library array
 let myLibrary = [];
 
+// constructor function
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -21,41 +23,31 @@ Book.prototype.info = function () {
 };
 
 // function to add a new book to the library array
-function addBookToLibrary() {
-    const newBook = new Book(
-        prompt("Enter book title..", "The Hobbit"),
-        prompt("Enter book author..", "J.R.R. Tolkien"),
-        prompt("Enter number of pages..", "295"),
-        prompt("Read:Y/N", "Y")
-    );
-    myLibrary.push(newBook);
-}
+// function addBookToLibrary() {
+//     const newBook = new Book(
+//         prompt("Enter book title..", "The Hobbit"),
+//         prompt("Enter book author..", "J.R.R. Tolkien"),
+//         prompt("Enter number of pages..", "295"),
+//         prompt("Read:Y/N", "Y")
+//     );
+//     myLibrary.push(newBook);
+// }
 
-// newBook.onclick = function () {
-//     addBookToLibrary();
-//     newGrid();
-//     display();
-// };
-
+// Modal Stuff -------------------------------------------------->
 // Get the modal
 var modal = document.getElementById("newModal");
-
 // Get the button that opens the modal
 let newBook = document.getElementById("newBook");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
 // When the user clicks on the button, open the modal
 newBook.onclick = function () {
     modal.style.display = "block";
 };
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
 };
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target == modal) {
@@ -81,14 +73,11 @@ function validate() {
     document.getElementById("no").checked = true;
 }
 
-
-
-
+// End of modal stuff -------------------------------------------------------->
 
 function display() {
     console.log(myLibrary);
     for (let i = 0; i < myLibrary.length; i++) {
-
         const newCard = document.createElement("div");
         const newCardHeader = document.createElement("div");
 
@@ -157,16 +146,6 @@ function display() {
 
     }
 }
-
-/* <div class="card">
-<div class="cardHeader">
-    <h2 class="cardTitle">Aru's Book of Sin</h2>
-    <span class="cardRemove">x</span>
-</div>
-<span class="cardAuthor">Author: </span>
-<span class="cardPages">Pages: </span>
-<span class="cardRead">Read: </span>
-</div> */
 
 const lib = document.getElementById("library");
 const list = document.getElementById("list");
