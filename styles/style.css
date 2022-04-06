@@ -287,6 +287,31 @@ main {
     margin-top:1.5rem;
 }
 
+#rec {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    background-color: #8d8d8d;
+    gap:1rem;
+    padding:2rem;
+    border-radius:20px;
+    box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.57);
+}
+
+
+#rec img {
+    width:20%;
+    margin: 0.5rem;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+
+#rec img:hover {
+    opacity: 1;
+}
+
 
 footer {
     text-align: center;
