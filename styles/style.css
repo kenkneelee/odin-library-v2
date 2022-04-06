@@ -16,14 +16,14 @@ html {
 body, html {
     margin:0;
     padding:0;
-    color: #faf7f8;
+    color: rgb(224, 224, 224);
     font-family: 'Montserrat', sans-serif;
 }
 
 body {
     display:flex;
     flex-direction: column;
-    background-color: #4577bb;
+    background-color: #040823b2;
     justify-content: space-between;
 }
 
@@ -40,10 +40,6 @@ h1 {
     padding:10px;
 }
 
-.headerTop {
-    background-color: #4577bb;
-}
-
 .logo {
     width:25%;
     display:flex;
@@ -56,11 +52,6 @@ h1 {
     text-align: right;
 }
 
-
-.headerBottom {
-    background-color: #ccc;
-    
-}
 
 .searchBar {
     display:flex;
@@ -92,11 +83,12 @@ h1 {
 }
 
 .tabs input[type="radio"]:checked + label{
-    background-color: #e7ceb6;
+    background-color: #c3c3c3;
+    color: #040823b2;
 }
 
 .tabs label {
-    background-color: #a3b8d3;
+    background-color: #040823b2;
     padding:20px;
     border-top-left-radius:10px;
     border-top-right-radius: 10px;
@@ -104,7 +96,7 @@ h1 {
 }
 
 .tabs .tab {
-    background-color: #a3b8d3;
+    background-color: #040823b2;
     order:1;
     margin:0px;
     padding:20px;
@@ -118,7 +110,7 @@ h1 {
 }
 
 button {
-    background-color: #faf7f8;
+    background-color: #ccc;
     border-radius:10px;
     padding:10px;
     font-family: "Montserrat", sans-serif;
@@ -137,54 +129,121 @@ main {
 }
 
 
-
+/* modal form (background) */
 .modal {
-    width:50%;
-    background-color:#4577bb;
-    color:#faf7f8;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.modal .close-button {
-    display:flex;
-    justify-content: flex-end;
+/* modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 1.5rem;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
 }
 
-.modal form {
+.newBookForm {
     display:flex;
     flex-direction: column;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap:1rem;
+    color: #040823b2;
 }
 
-.formInfo {
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width:100%;
-    align-items: center;
-}
-
-.modal input {
-    height: 1rem;
-    padding:0.5rem;
+.textInput {
     width:50%;
-    border-radius: 1rem;
+    border-radius: 20px;
+    line-height: 20%;
+    font-size:20px;
+    padding:2%;
     text-align: center;
 }
 
-.modal button {
-    width: 5rem;
-    align-self: center;
+/* modal close button */
+.close {
+    color: #aaa;
+    position:relative;
+    left:50%;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-.modal label {
-    background-color: initial;
-    border-top-left-radius:0px;
-    border-top-right-radius: 0px;
-    order:initial;
-    display:flex;
-    padding: 0;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
+
+/* Modal Header */
+.modal-header {
+    padding: 0.5rem 1rem;
+    background-color: #040823b2;
+    color: white;
+    text-align: center;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 1.5rem;
+    background-color: #040823b2;
+    color: white;
+}
+
+/* Modal Content */
+.modal-content {
+    top:5%;
+    position: relative;
+    background-color: #fefefe91;
+    backdrop-filter: blur(4px);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    text-align: center;
+}
+
+/* modal form submit button */
+#modalSubmit {
+    color:white;
+    background-color: #040823b2;
+    width: 20%;
+    padding:10px;
+    border: 1px outset black;
+    border-radius: 5px;
+    font-family: "Playfair Display", serif;
+}
+
+/* modal form animation */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 5%;
+        opacity: 1;
+    }
+}
+
+/* ------------------------------ */
 
 
 
@@ -195,7 +254,7 @@ main {
     grid-template-rows:repeat(auto-fill, minmax(10rem, 1fr));
     grid-auto-rows:auto;
     grid-gap:2rem;
-    background-color: #c3c3c3;
+    background-color: #8d8d8d;
     height:100%;
     padding:2rem;
     border-radius:20px;
@@ -203,7 +262,7 @@ main {
 }
 
 .card {
-    background-color: #4577bb;
+    background-color: #040823b2;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -230,7 +289,6 @@ main {
 footer {
     text-align: center;
     width:100%;
-    background-color: #4577bb;
     padding:20px 0px;
 }
 

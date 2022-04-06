@@ -20,6 +20,7 @@ Book.prototype.info = function () {
     );
 };
 
+// function to add a new book to the library array
 function addBookToLibrary() {
     const newBook = new Book(
         prompt("Enter book title..", "The Hobbit"),
@@ -30,23 +31,38 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
 }
 
-let newBook = document.getElementById("newBook");
 // newBook.onclick = function () {
 //     addBookToLibrary();
 //     newGrid();
 //     display();
 // };
 
-const modal = document.querySelector("#modal");
-const closeModal = document.querySelector(".close-button");
+// Get the modal
+var modal = document.getElementById("newModal");
 
-newBook.addEventListener("click", () => {
-  modal.showModal();
-});
+// Get the button that opens the modal
+let newBook = document.getElementById("newBook");
 
-closeModal.addEventListener("click", () => {
-  modal.close();
-});
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+newBook.onclick = function () {
+    modal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
 
 
 
@@ -154,3 +170,4 @@ myLibrary.push(book4);
 
 display();
 console.log(book1.info());
+
