@@ -63,6 +63,24 @@ window.onclick = function (event) {
     }
 };
 
+// When the user presses the 'submit' button, add the book to the library
+function validate() {
+    var title = document.getElementById("title").value;
+    var author = document.getElementById("author").value;
+    var pages = document.getElementById("pages").value;
+    var read = document.querySelector('input[name="read"]:checked').value;
+    const newBook = new Book(title, author, pages, read);
+    console.log(newBook);
+    myLibrary.push(newBook);
+    newGrid();
+    display();
+    modal.style.display = "none";
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById("pages").value = "";
+    document.getElementById("no").checked = true;
+}
+
 
 
 
@@ -70,7 +88,6 @@ window.onclick = function (event) {
 function display() {
     console.log(myLibrary);
     for (let i = 0; i < myLibrary.length; i++) {
-        console.log(myLibrary[i]);
 
         const newCard = document.createElement("div");
         const newCardHeader = document.createElement("div");
@@ -89,12 +106,13 @@ function display() {
         newCardAuthor.textContent = "Author: " + myLibrary[i].author;
         newCardPages.textContent = "Pages: " + myLibrary[i].pages;
 
-        newCardRead.textContent = "Read: " + myLibrary[i].read;
+        newCardRead.textContent = "Read: ";
         newCardReadAnswer.textContent = myLibrary[i].read;
         if (myLibrary[i].read == "Yes") {
             newCardReadAnswer.style.color = "Green";
         } else {
             newCardReadAnswer.style.color = "Red";
+            newCard.style.backgroundColor="#0408237a";
         }
 
         newCard.classList.add("card");
@@ -108,6 +126,8 @@ function display() {
 
         newCard.appendChild(newCardAuthor);
         newCard.appendChild(newCardPages);
+
+        newCardRead.appendChild(newCardReadAnswer);
         newCard.appendChild(newCardRead);
 
         lib.appendChild(newCard);
@@ -119,6 +139,22 @@ function display() {
             newGrid();
             display();
         };
+
+        newCardReadAnswer.classList.add("toggleButton");
+        newCardReadAnswer.setAttribute("id", "toggle" + i);
+        var toggleRead = document.getElementById("toggle" + i);
+        toggleRead.onclick = function () {
+            if (myLibrary[i].read == "Yes") {
+                myLibrary[i].read = "No";
+                newGrid();
+                display();
+            } else {
+                myLibrary[i].read = "Yes";
+                newGrid();
+                display();
+            }
+        };
+
     }
 }
 
@@ -169,5 +205,4 @@ myLibrary.push(book3);
 myLibrary.push(book4);
 
 display();
-console.log(book1.info());
 

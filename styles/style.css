@@ -7,6 +7,8 @@
     background-color: #e7ceb6;
     /* text */
     color: #faf7f8;
+    /*test*/
+    color: #0408237a;
 }
 
 html {
@@ -23,7 +25,7 @@ body, html {
 body {
     display:flex;
     flex-direction: column;
-    background-color: #040823b2;
+    background-color: #04082391;
     justify-content: space-between;
 }
 
@@ -93,6 +95,7 @@ h1 {
     border-top-left-radius:10px;
     border-top-right-radius: 10px;
     order:0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tabs .tab {
@@ -222,13 +225,7 @@ main {
 
 /* modal form submit button */
 #modalSubmit {
-    color:white;
-    background-color: #040823b2;
-    width: 20%;
-    padding:10px;
-    border: 1px outset black;
-    border-radius: 5px;
-    font-family: "Playfair Display", serif;
+    padding:0.5rem 1rem;
 }
 
 /* modal form animation */
@@ -278,6 +275,11 @@ main {
 .cardRemove {
     cursor:pointer;
     height:1rem;
+}
+
+.toggleButton {
+    cursor:pointer;
+    user-select: none;
 }
 
 #clearBtn, #clearBtn2 {
