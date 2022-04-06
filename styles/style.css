@@ -121,7 +121,7 @@ button {
     font-family: "Montserrat", sans-serif;
 }
 
-#newBook {
+#newBook, #newList {
     margin:auto;
     margin-right: 10px;
     order:0;
@@ -242,7 +242,9 @@ main {
 
 /* ------------------------------ */
 
-
+.tab-header {
+    display:flex;
+}
 
 
 .library {
@@ -304,12 +306,13 @@ main {
     margin: 0.5rem;
     border-radius: 20px;
     border: 2px solid #ccc;
-    opacity: 0.4;
-    transition: 0.5s;
+    opacity: 0.3;
+    transition: 1.5s;
 }
 
 #rec img:hover {
     opacity: 1;
+    transition:2s;
 }
 
 

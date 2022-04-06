@@ -34,7 +34,7 @@
         </header>
 
         <main>
-            <div id="newModal" class="modal">
+            <div id="newBookModal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="close">&times;</span>
@@ -88,40 +88,81 @@
                 </div>
             </div>
 
+            <div id="newListModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>New List Item</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="newBookForm">
+                            <label for="listTitle">Title</label>
+                            <input
+                                type="text"
+                                id="listTitle"
+                                name="listTitle"
+                                class="textInput"
+                            />
+                            <label for="listAuthor">Author</label>
+                            <input
+                                type="text"
+                                id="listAuthor"
+                                name="listAuthor"
+                                class="textInput"
+                            />
+                            <label for="listPages">Pages</label>
+                            <input
+                                type="number"
+                                id="listPages"
+                                name="listPages"
+                                class="textInput"
+                            />
+                            <div>
+                                <label for="listRead">Owned?</label>
+                                <input
+                                    type="radio"
+                                    id="listYes"
+                                    name="listRead"
+                                    value="Yes"
+                                />
+                                <label for="listYes">Yes</label>
+                                <input
+                                    type="radio"
+                                    id="listNo"
+                                    name="listRead"
+                                    value="No"
+                                    checked
+                                />
+                                <label for="listNo">No</label>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="modalSubmit" onclick="validateList()">Submit </button></form>
+                    </div>
+                </div>
+            </div>
+
             <div class="tabs">
                 <input type="radio" id="tab1" name="mytabs" checked="checked" />
                 <label for="tab1">My Books</label>
                 <div class="tab">
-                    <h2>My Books</h2>
+                    <div class="tab-header">
+                        <h2>My Books</h2>
+                        <button id="newBook" class="newBook">New Library Book</button>
+                    </div>
                     <div id="library" class="library"></div>
                     <button id="clearBtn">CLEAR GRID</button>
-
-
                 </div>
 
                 <input type="radio" id="tab2" name="mytabs" />
                 <label for="tab2">My List</label>
                 <div class="tab">
-                    <h2>My Lists</h2>
+                    <div class="tab-header">
+                        <h2>My List</h2>
+                        <button id="newList" class="newBook">New List Item</button>
+                    </div>
                     <div id="list" class="library">
-                        <div class="card">
-                            <div class="cardHeader">
-                                <h2 class="cardTitle">Aru's Book of Sin</h2>
-                                <span class="cardRemove">x</span>
-                            </div>
-                            <span class="cardAuthor">Author: </span>
-                            <span class="cardPages">Pages: </span>
-                            <span class="cardRead">Read: </span>
-                        </div>
-                        <div class="card">
-                            <div class="cardHeader">
-                                <h2 class="cardTitle">Aru's Book of Sin</h2>
-                                <span class="cardRemove">x</span>
-                            </div>
-                            <span class="cardAuthor">Author: </span>
-                            <span class="cardPages">Pages: </span>
-                            <span class="cardRead">Read: </span>
-                        </div>
+
                     </div>
                     <button id="clearBtn2">CLEAR LIST</button>
                 </div>
@@ -140,10 +181,9 @@
                         <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/To_Kill_a_Mockingbird_first_edition_cover.jpg">
                     </div>
                 </div>
-                <button id="newBook" class="newBook">New Book</button>
             </div>
         </main>
 
-        <footer>Made by Kenny Lee @ The Odin Project</footer>
+        <footer>Made by Kenny Lee @ <a href="http://theodinproject.com">The Odin Project</a>.</footer>
     </body>
 </html>

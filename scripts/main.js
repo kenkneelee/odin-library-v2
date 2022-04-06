@@ -1,5 +1,6 @@
 // declare library array
 let myLibrary = [];
+let myList = [];
 
 // constructor function
 function Book(title, author, pages, read) {
@@ -35,7 +36,7 @@ Book.prototype.info = function () {
 
 // Modal Stuff -------------------------------------------------->
 // Get the modal
-var modal = document.getElementById("newModal");
+var modal = document.getElementById("newBookModal");
 // Get the button that opens the modal
 let newBook = document.getElementById("newBook");
 // Get the <span> element that closes the modal
@@ -74,6 +75,48 @@ function validate() {
 }
 
 // End of modal stuff -------------------------------------------------------->
+
+// Second Modal Stuff -------------------------------------------------->
+// Get the modal
+var listModal = document.getElementById("newListModal");
+// Get the button that opens the modal
+let newList = document.getElementById("newList");
+// Get the <span> element that closes the modal
+var span1 = document.getElementsByClassName("close")[1];
+// When the user clicks on the button, open the modal
+newList.onclick = function () {
+    listModal.style.display = "block";
+};
+// When the user clicks on <span> (x), close the modal
+span1.onclick = function () {
+    listModal.style.display = "none";
+};
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == listModal) {
+        listModal.style.display = "none";
+    }
+};
+
+// When the user presses the 'submit' button, add the book to the list
+function validateList() {
+    var title = document.getElementById("listTitle").value;
+    var author = document.getElementById("listAuthor").value;
+    var pages = document.getElementById("listPages").value;
+    var read = document.querySelector('input[name="listRead"]:checked').value;
+    const newBook = new Book(title, author, pages, read);
+    console.log(newBook);
+    myList.push(newBook);
+    newGrid2();
+    displayList();
+    listModal.style.display = "none";
+    document.getElementById("listTitle").value = "";
+    document.getElementById("listAuthor").value = "";
+    document.getElementById("listPages").value = "";
+    document.getElementById("listNo").checked = true;
+}
+
+// End of second modal stuff -------------------------------------------------------->
 
 function display() {
     console.log(myLibrary);
@@ -147,17 +190,91 @@ function display() {
     }
 }
 
+function displayList() {
+    console.log(myList);
+    for (let i = 0; i < myList.length; i++) {
+        const newCard = document.createElement("div");
+        const newCardHeader = document.createElement("div");
+
+        const newCardTitle = document.createElement("h2");
+        const newCardRemove = document.createElement("span");
+
+        const newCardAuthor = document.createElement("div");
+        const newCardPages = document.createElement("div");
+        const newCardRead = document.createElement("div");
+        const newCardReadAnswer = document.createElement("span");
+
+        newCardTitle.textContent = myList[i].title;
+        newCardRemove.textContent = "x";
+
+        newCardAuthor.textContent = "Author: " + myList[i].author;
+        newCardPages.textContent = "Pages: " + myList[i].pages;
+
+        newCardRead.textContent = "Owned: ";
+        newCardReadAnswer.textContent = myList[i].read;
+        if (myList[i].read == "Yes") {
+            newCardReadAnswer.style.color = "Green";
+        } else {
+            newCardReadAnswer.style.color = "Red";
+            newCard.style.backgroundColor="#0408237a";
+        }
+
+        newCard.classList.add("card");
+        newCardHeader.classList.add("cardHeader");
+        newCardRemove.classList.add("cardRemove");
+        newCardRemove.setAttribute("id", "deleteList" + i);
+
+        newCardHeader.appendChild(newCardTitle);
+        newCardHeader.appendChild(newCardRemove);
+        newCard.appendChild(newCardHeader);
+
+        newCard.appendChild(newCardAuthor);
+        newCard.appendChild(newCardPages);
+
+        newCardRead.appendChild(newCardReadAnswer);
+        newCard.appendChild(newCardRead);
+
+        list.appendChild(newCard);
+
+        var deleteBtn = document.getElementById("deleteList" + i);
+        deleteBtn.onclick = function () {
+            console.log("deleting " + myList[i].title + "...");
+            myList.splice(i, 1);
+            newGrid2();
+            displayList();
+        };
+
+        newCardReadAnswer.classList.add("toggleButton");
+        newCardReadAnswer.setAttribute("id", "toggleList" + i);
+        var toggleRead = document.getElementById("toggleList" + i);
+        toggleRead.onclick = function () {
+            if (myList[i].read == "Yes") {
+                myList[i].read = "No";
+                newGrid2();
+                displayList();
+            } else {
+                myList[i].read = "Yes";
+                newGrid2();
+                displayList();
+            }
+        };
+
+    }
+}
+
 const lib = document.getElementById("library");
 const list = document.getElementById("list");
 
 var clearBtn = document.getElementById("clearBtn");
 clearBtn.onclick = function () {
     newGrid();
+    myLibrary=[];
 };
 
 var clearListBtn = document.getElementById("clearBtn2");
 clearListBtn.onclick = function () {
     newGrid2();
+    myList=[];
 };
 
 function newGrid() {
@@ -182,6 +299,7 @@ myLibrary.push(book1);
 myLibrary.push(book2);
 myLibrary.push(book3);
 myLibrary.push(book4);
-
+myList.push(book3);
+myList.push(book1);
 display();
-
+displayList();
