@@ -140,27 +140,36 @@ main {
 
 .modal {
     width:50%;
+    background-color:#4577bb;
+    color:#faf7f8;
 }
 
-.modal .modalHeader {
+.modal .close-button {
     display:flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .modal form {
     display:flex;
     flex-direction: column;
+    align-items: center;
+    gap:1rem;
 }
 
 .formInfo {
     display:flex;
     flex-direction: column;
+    align-items: flex-start;
+    width:100%;
+    align-items: center;
 }
 
 .modal input {
     height: 1rem;
-    width:25%;
+    padding:0.5rem;
+    width:50%;
     border-radius: 1rem;
+    text-align: center;
 }
 
 .modal button {
