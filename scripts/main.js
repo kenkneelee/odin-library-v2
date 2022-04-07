@@ -204,6 +204,7 @@ function displayList() {
         const newCardPages = document.createElement("div");
         const newCardRead = document.createElement("div");
         const newCardReadAnswer = document.createElement("span");
+        const newCardMove = document.createElement("button");
 
         newCardTitle.textContent = myList[i].title;
         newCardRemove.textContent = "x";
@@ -219,6 +220,14 @@ function displayList() {
             newCardReadAnswer.style.color = "Red";
             newCard.style.backgroundColor="#0408237a";
         }
+        newCardMove.textContent = "Move to My Books";
+        newCardRead.classList.add("read");
+        newCardReadAnswer.classList.add("readAnswer");
+        if (newCardReadAnswer.textContent=="Yes") {
+            newCardReadAnswer.appendChild(newCardMove);
+        }
+        newCardRead.appendChild(newCardReadAnswer);
+
 
         newCard.classList.add("card");
         newCardHeader.classList.add("cardHeader");
@@ -231,8 +240,6 @@ function displayList() {
 
         newCard.appendChild(newCardAuthor);
         newCard.appendChild(newCardPages);
-
-        newCardRead.appendChild(newCardReadAnswer);
         newCard.appendChild(newCardRead);
 
         list.appendChild(newCard);
@@ -312,10 +319,6 @@ for (let i=0; i<recommended.length;i++) {
         document.getElementById("tab2").checked=true;
     };
 }
-
-
-
-
 
 const book1 = new Book("A Game of Thrones", "George Martin", 695, "Yes");
 const book2 = new Book("Naruto", "Masashi Kishimoto", 4354, "No");
