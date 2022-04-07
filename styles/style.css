@@ -301,18 +301,49 @@ main {
 }
 
 
-#rec img {
+#rec .hoverContainer {
     width:20%;
     margin: 0.5rem;
     border-radius: 20px;
     border: 2px solid #ccc;
-    opacity: 0.3;
-    transition: 1.5s;
 }
 
-#rec img:hover {
+#rec img {
+    width:100%;
+    height:100%;
+    border-radius: 20px;
+    display:block;
+}
+
+.hoverOverlay {
+    background-color: #0408237a;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+    border-radius: 20px;
+    position:relative;
+    bottom:100%;
+}
+
+.hoverContainer:hover .hoverOverlay {
+    width:100%;
+}
+
+.hoverContainer:hover img {
     opacity: 1;
-    transition:2s;
+}
+
+.hoverText {
+    position:relative;
+    text-align: center;
+    left:50%;
+    top:50%;
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }
 
 
@@ -349,7 +380,7 @@ footer {
         align-items: center;
     }
 
-    #rec img {
+    #rec .hoverContainer {
         width:60%;
     }
 }

@@ -1,6 +1,7 @@
 // declare library array
 let myLibrary = [];
 let myList = [];
+let recommended = [];
 
 // constructor function
 function Book(title, author, pages, read) {
@@ -291,15 +292,36 @@ function newGrid2() {
     });
 }
 
+const recommended0 = new Book("Pride and Prejudice", "Jane Austen", 364, "No");
+const recommended1 = new Book("The Great Gatsby", "F Scott Fitzgerald", 180, "No");
+const recommended2 = new Book("Brave New World", "Aldous Huxley", 311, "No");
+const recommended3 = new Book("Fahrenheit 451", "Ray Bradbury", 256, "No");
+const recommended4 = new Book("The Godfather", "Mario Puzo", 448, "No");
+const recommended5 = new Book("Jaws", "Peter Benchley", 278, "No");
+const recommended6 = new Book("To Kill A Mockingbird", "Harper Lee", 281, "No");
+recommended.push(recommended0,recommended1,recommended2,recommended3,recommended4,recommended5,recommended6);
+console.log(recommended);
+
+for (let i=0; i<recommended.length;i++) {
+    var addRecommended = document.getElementById("recommended" + i);
+    addRecommended.onclick = function () {
+        console.log("Adding " + recommended[i].title + "...");
+        myList.push(recommended[i]);
+        newGrid2();
+        displayList();
+        document.getElementById("tab2").checked=true;
+    };
+}
+
+
+
+
+
 const book1 = new Book("A Game of Thrones", "George Martin", 695, "Yes");
 const book2 = new Book("Naruto", "Masashi Kishimoto", 4354, "No");
 const book3 = new Book("The Lord of The Rings", "J.R.R. Tolkien", 479, "Yes")
 const book4 = new Book("Ender's Game", "Orson Scott", 324, "No")
-myLibrary.push(book1);
-myLibrary.push(book2);
-myLibrary.push(book3);
-myLibrary.push(book4);
-myList.push(book3);
-myList.push(book1);
+myLibrary.push(book1, book2, book3, book4);
+myList.push(book3, book1);
 display();
 displayList();

@@ -81,9 +81,16 @@
                                 />
                                 <label for="no">No</label>
                             </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="modalSubmit" onclick="validate()">Submit </button></form>
+                        <button
+                            type="button"
+                            id="modalSubmit"
+                            onclick="validate()"
+                        >
+                            Submit
+                        </button>
                     </div>
                 </div>
             </div>
@@ -135,9 +142,16 @@
                                 />
                                 <label for="listNo">No</label>
                             </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="modalSubmit" onclick="validateList()">Submit </button></form>
+                        <button
+                            type="button"
+                            id="modalSubmit"
+                            onclick="validateList()"
+                        >
+                            Submit
+                        </button>
                     </div>
                 </div>
             </div>
@@ -148,7 +162,9 @@
                 <div class="tab">
                     <div class="tab-header">
                         <h2>My Books</h2>
-                        <button id="newBook" class="newBook">New Library Book</button>
+                        <button id="newBook" class="newBook">
+                            New Library Book
+                        </button>
                     </div>
                     <div id="library" class="library"></div>
                     <button id="clearBtn">CLEAR GRID</button>
@@ -159,11 +175,11 @@
                 <div class="tab">
                     <div class="tab-header">
                         <h2>My List</h2>
-                        <button id="newList" class="newBook">New List Item</button>
+                        <button id="newList" class="newBook">
+                            New List Item
+                        </button>
                     </div>
-                    <div id="list" class="library">
-
-                    </div>
+                    <div id="list" class="library"></div>
                     <button id="clearBtn2">CLEAR LIST</button>
                 </div>
 
@@ -172,18 +188,76 @@
                 <div class="tab">
                     <h2>Recommended</h2>
                     <div id="rec">
-                        <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/3b47d124002685f2a3c67e47383232c7.jpg">
-                        <img src="https://s26162.pcdn.co/wp-content/uploads/2018/02/gatsby-original2.jpg">
-                        <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/bravenewworld.jpg">
-                        <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/lf-1-1.jpg">
-                        <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/81IHPwG1tbL.jpg">
-                        <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/Jaws-BTS-91.png">
-                        <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/To_Kill_a_Mockingbird_first_edition_cover.jpg">
+                        <div class="hoverContainer">
+                            <img
+                                src="https://s26162.pcdn.co/wp-content/uploads/2021/10/3b47d124002685f2a3c67e47383232c7.jpg"
+                            />
+                            <div class="hoverOverlay">
+                                <div class="hoverText"><button id="recommended0">Add to List</button></div>
+                            </div>
+                        </div>
+
+                        <div class="hoverContainer">
+                            <img
+                                src="https://s26162.pcdn.co/wp-content/uploads/2018/02/gatsby-original2.jpg"
+                            />
+                            <div class="hoverOverlay">
+                                <div class="hoverText"><button id="recommended1">Add to List</button></div>
+                            </div>
+                        </div>
+
+                        <div class="hoverContainer">
+                            <img
+                                src="https://s26162.pcdn.co/wp-content/uploads/2021/10/bravenewworld.jpg"
+                            />
+                            <div class="hoverOverlay">
+                                <div class="hoverText"><button id="recommended2">Add to List</button></div>
+                            </div>
+                        </div>
+
+                        <div class="hoverContainer">
+                            <img
+                                src="https://s26162.pcdn.co/wp-content/uploads/2021/10/lf-1-1.jpg"
+                            />
+                            <div class="hoverOverlay">
+                                <div class="hoverText"><button id="recommended3">Add to List</button></div>
+                            </div>
+                        </div>
+
+                        <div class="hoverContainer">
+                            <img
+                                src="https://s26162.pcdn.co/wp-content/uploads/2021/10/81IHPwG1tbL.jpg"
+                            />
+                            <div class="hoverOverlay">
+                                <div class="hoverText"><button id="recommended4">Add to List</button></div>
+                            </div>
+                        </div>
+
+                        <div class="hoverContainer">
+                            <img
+                                src="https://s26162.pcdn.co/wp-content/uploads/2021/10/Jaws-BTS-91.png"
+                            />
+                            <div class="hoverOverlay">
+                                <div class="hoverText"><button id="recommended5">Add to List</button></div>
+                            </div>
+                        </div>
+
+                        <div class="hoverContainer">
+                            <img
+                                src="https://s26162.pcdn.co/wp-content/uploads/2021/10/To_Kill_a_Mockingbird_first_edition_cover.jpg"
+                            />
+                            <div class="hoverOverlay">
+                                <div class="hoverText"><button id="recommended6">Add to List</button></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
 
-        <footer>Made by Kenny Lee @ <a href="http://theodinproject.com">The Odin Project</a>.</footer>
+        <footer>
+            Made by Kenny Lee @
+            <a href="http://theodinproject.com">The Odin Project</a>.
+        </footer>
     </body>
 </html>
