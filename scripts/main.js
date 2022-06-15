@@ -1,28 +1,19 @@
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    } 
+    info() {
+        return (this.title + '' + this.author + '' + this.pages + '' + this.read);
+    }
+}
+
 // declare library array
 let myLibrary = [];
 let myList = [];
 let recommended = [];
-
-// constructor function
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-
-// using prototype, every new book object created will refer to this function instead of creating a new one
-Book.prototype.info = function () {
-    return (
-        this.title +
-        " by " +
-        this.author +
-        ", " +
-        this.pages +
-        " pages, " +
-        this.read
-    );
-};
 
 // function to add a new book to the library array
 // function addBookToLibrary() {
